@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earth Angel Tarot</title>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; }
+    img { max-width: 300px; height: auto; margin: 20px 0; }
+    button { padding: 10px 20px; font-size: 18px; border: none; background-color: #ff6b6b; color: #fff; cursor: pointer; border-radius: 5px; }
+    button:hover { background-color: #ff5252; }
+    .card-info { font-size: 18px; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Earth Angel Tarot Reading</h1>
+  <div id="card-display">
+    <p>Click the button to reveal your card.</p>
+    <img id="card-image" src="" alt="" style="display: none;">
+    <p class="card-info" id="card-name" style="font-weight: bold;"></p>
+    <p class="card-info" id="card-meaning"></p>
+  </div>
+  <button onclick="drawCard()">Draw a Card</button>
+  <script>
+    const cards = [
+      { name: "The Fool", image: "https://via.placeholder.com/300x400?text=The+Fool", meaning: "New beginnings, spontaneity, freedom." },
+      { name: "The Magician", image: "https://via.placeholder.com/300x400?text=The+Magician", meaning: "Power, skill, manifestation." },
+      { name: "The High Priestess", image: "https://via.placeholder.com/300x400?text=The+High+Priestess", meaning: "Intuition, mystery, inner knowledge." }
+    ];
+
+    function drawCard() {
+      const randomIndex = Math.floor(Math.random() * cards.length);
+      const card = cards[randomIndex];
+      document.getElementById("card-image").src = card.image;
+      document.getElementById("card-image").style.display = "block";
+      document.getElementById("card-name").innerText = card.name;
+      document.getElementById("card-meaning").innerText = card.meaning;
+    }
+  </script>
+</body>
+</html>
